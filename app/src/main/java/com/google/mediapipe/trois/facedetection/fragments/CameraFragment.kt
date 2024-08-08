@@ -51,10 +51,10 @@ class CameraFragment : Fragment(), FaceDetectorHelper.DetectorListener {
 
     override fun onResume() {
         super.onResume()
-        if (!PermissionsFragment.hasPermissions(requireContext())) {
-            Navigation.findNavController(requireActivity(), R.id.fragment_container)
-                .navigate(CameraFragmentDirections.actionCameraToPermissions())
-        }
+//        if (!PermissionsFragment.hasPermissions(requireContext())) {
+//            Navigation.findNavController(requireActivity(), R.id.fragment_container)
+//                .navigate(CameraFragmentDirections.actionCameraToPermissions())
+//        }
 
         backgroundExecutor.execute {
             if (faceDetectorHelper.isClosed()) {
@@ -103,8 +103,8 @@ class CameraFragment : Fragment(), FaceDetectorHelper.DetectorListener {
                     runningMode = RunningMode.LIVE_STREAM
                 )
             fragmentCameraBinding.frontCameraViewFinder.post {
-                setUpCamera()
-                setupViewTouchListeners()
+//                setUpCamera()
+//                setupViewTouchListeners()
             }
         }
     }
